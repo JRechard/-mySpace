@@ -1,0 +1,2 @@
+/userModule/test_login
+/userModule/test_profile
