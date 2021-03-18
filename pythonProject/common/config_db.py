@@ -19,7 +19,5 @@ class ConfigMongodb:
         return database
 
 
-client = ConfigMongodb("123.206.217.183", 27017, "milu", "KuJ9i_of3hU_dGz3d", "mintmuse")
+client = ConfigMongodb("host", 27017, "username", "password", "db_name")
 db = client.connect_db()
-for i in db.list_collection_names():
-    print(i)
