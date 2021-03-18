@@ -1,8 +1,5 @@
 import pymongo
 
-host = ""
-port = 27017
-
 
 class ConfigMongodb:
     def __init__(self, host, port):
@@ -16,5 +13,5 @@ class ConfigMongodb:
         return connection
 
 
-client = ConfigMongodb(host, port)
+client = ConfigMongodb("localhost", 27017)
 connection = client.connect_db()
