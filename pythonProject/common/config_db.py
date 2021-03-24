@@ -17,7 +17,3 @@ class ConfigMongodb:
         database = conn[self.db_name]
         database.authenticate(name=self.username, password=self.password)
         return database
-
-
-client = ConfigMongodb("host", 27017, "username", "password", "db_name")
-db = client.connect_db()
