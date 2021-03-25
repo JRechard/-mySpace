@@ -6,18 +6,21 @@ from email.mime.multipart import MIMEMultipart
 
 
 class ConfigEmail:
+    """
+        配置发送邮件
+    """
     def __init__(self, username, password, receivers, title, content,
                  file=None, ssl=False, email_host="smtp.163.com", port=25, ssl_port=465):
-        self.username = username
-        self.password = password
-        self.receivers = receivers
-        self.title = title
-        self.content = content
-        self.file = file
-        self.ssl = ssl
-        self.email_host = email_host
-        self.port = port
-        self.ssl_port = ssl_port
+        self.username = username  # 发送者用户名
+        self.password = password  # 发送者密码
+        self.receivers = receivers  # 收件者邮箱
+        self.title = title  # 邮件标题
+        self.content = content  # 邮件正文内容
+        self.file = file  # 邮件附件
+        self.ssl = ssl  # 使用与否ssl协议
+        self.email_host = email_host  # smtp服务主机
+        self.port = port  # smtp服务端口号
+        self.ssl_port = ssl_port  # ssl端口号
 
     def send_email(self):
         message = MIMEMultipart()
@@ -26,7 +29,7 @@ class ConfigEmail:
             try:
                 f = open(self.file, "rb").read()
             except Exception:
-                raise Exception("附件不存在")
+                raise Exception("附件无法打开")
             else:
                 att = MIMEText(f, "base64", "utf-8")
                 att['Content-Type'] = 'application/octet-stream'
