@@ -22,3 +22,20 @@ class ConfigMongodb:
         database = conn[self.db_name]  # 连接数据库
         database.authenticate(name=self.username, password=self.password)  # 验证账户名与密码
         return database
+
+    # 查询方法,返回布尔值
+    def search_to_boolean(self, collection_name, data):
+        db = self.connect_db()
+        collection = db.get_collection(collection_name)
+        cursor = collection.find(data)
+        if list(cursor):
+            return True
+        else:
+            return False
+
+    # 查询方法
+    def search(self, collection_name, data):
+        db = self.connect_db()
+        collection = db.get_collection(collection_name)
+        cursor = collection.find(data)
+        return list(cursor)

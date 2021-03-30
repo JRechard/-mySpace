@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>test report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2021-03-10 17:56:59</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:00.640982</p>
-<p class='attribute'><strong>Status:</strong> Pass 7 Failure 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2021-03-25 20:53:44</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:01.192972</p>
+<p class='attribute'><strong>Status:</strong> Pass 5 Failure 3</p>
 
 <p class='description'>test results</p>
 </div>
@@ -258,15 +258,46 @@ function showOutput(id, name) {
 <tr class='failClass'>
     <td>userModule.test_profile.TestProfile</td>
     <td>3</td>
-    <td>2</td>
-    <td>1</td>
+    <td>0</td>
+    <td>3</td>
     <td>0</td>
     <td><a href="javascript:showClassDetail('c2',3)">Detail</a></td>
 </tr>
 
-<tr id='pt2.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_profile_0_user_profile_guitar</div></td>
-    <td colspan='5' align='center'>pass</td>
+<tr id='ft2.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_profile_0_user_profile_guitar</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        fail</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: Traceback (most recent call last):
+  File "D:\PyCharmProject\lib\site-packages\parameterized\parameterized.py", line 533, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "C:\Users\EDZ\PycharmProjects\pythonProject\testCases\userModule\test_profile.py", line 28, in test_profile
+    self.assertEqual(body['payload']['isStudyPlanProductPurchased']['Primary'], True)
+AssertionError: False != True
+Traceback (most recent call last):
+  File "D:\PyCharmProject\lib\site-packages\parameterized\parameterized.py", line 533, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "C:\Users\EDZ\PycharmProjects\pythonProject\testCases\userModule\test_profile.py", line 28, in test_profile
+    self.assertEqual(body['payload']['isStudyPlanProductPurchased']['Primary'], True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
 <tr id='ft2.2' class='none'>
@@ -287,14 +318,14 @@ function showOutput(id, name) {
 ft2.2: Traceback (most recent call last):
   File "D:\PyCharmProject\lib\site-packages\parameterized\parameterized.py", line 533, in standalone_func
     return func(*(a + p.args), **p.kwargs)
-  File "C:\Users\EDZ\PycharmProjects\pythonProject\testCases\userModule\test_profile.py", line 23, in test_profile
-    self.assertEqual(body['payload']['isStudyPlanProductPurchased']['Intermediate'], True)
+  File "C:\Users\EDZ\PycharmProjects\pythonProject\testCases\userModule\test_profile.py", line 28, in test_profile
+    self.assertEqual(body['payload']['isStudyPlanProductPurchased']['Primary'], True)
 AssertionError: False != True
 Traceback (most recent call last):
   File "D:\PyCharmProject\lib\site-packages\parameterized\parameterized.py", line 533, in standalone_func
     return func(*(a + p.args), **p.kwargs)
-  File "C:\Users\EDZ\PycharmProjects\pythonProject\testCases\userModule\test_profile.py", line 23, in test_profile
-    self.assertEqual(body['payload']['isStudyPlanProductPurchased']['Intermediate'], True)
+  File "C:\Users\EDZ\PycharmProjects\pythonProject\testCases\userModule\test_profile.py", line 28, in test_profile
+    self.assertEqual(body['payload']['isStudyPlanProductPurchased']['Primary'], True)
 AssertionError: False != True
 
 
@@ -305,16 +336,47 @@ AssertionError: False != True
     </td>
 </tr>
 
-<tr id='pt2.3' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_profile_2_user_profile_musicality</div></td>
-    <td colspan='5' align='center'>pass</td>
+<tr id='ft2.3' class='none'>
+    <td class='failCase'><div class='testcase'>test_profile_2_user_profile_musicality</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.3')" >
+        fail</a>
+
+    <div id='div_ft2.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.3: Traceback (most recent call last):
+  File "D:\PyCharmProject\lib\site-packages\parameterized\parameterized.py", line 533, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "C:\Users\EDZ\PycharmProjects\pythonProject\testCases\userModule\test_profile.py", line 28, in test_profile
+    self.assertEqual(body['payload']['isStudyPlanProductPurchased']['Primary'], True)
+AssertionError: False != True
+Traceback (most recent call last):
+  File "D:\PyCharmProject\lib\site-packages\parameterized\parameterized.py", line 533, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "C:\Users\EDZ\PycharmProjects\pythonProject\testCases\userModule\test_profile.py", line 28, in test_profile
+    self.assertEqual(body['payload']['isStudyPlanProductPurchased']['Primary'], True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
     <td>8</td>
-    <td>7</td>
-    <td>1</td>
+    <td>5</td>
+    <td>3</td>
     <td>0</td>
     <td>&nbsp;</td>
 </tr>

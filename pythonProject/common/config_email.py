@@ -24,18 +24,18 @@ class ConfigEmail:
 
     def send_email(self):
         message = MIMEMultipart()
-        if self.file:
+        try:
+            with open(self.file, "rb") as f:
+                content = f.read()
+        except FileNotFoundError:
+            print("File not found!")
+        else:
             file_name = os.path.split(self.file)[-1]
-            try:
-                f = open(self.file, "rb").read()
-            except Exception:
-                raise Exception("附件无法打开")
-            else:
-                att = MIMEText(f, "base64", "utf-8")
-                att['Content-Type'] = 'application/octet-stream'
-                new_file_name = '=?utf-8?b?' + base64.b64encode(file_name.encode()).decode() + '?='
-                att["Content-Disposition"] = 'attachment; filename="%s"' % new_file_name
-                message.attach(att)
+            att = MIMEText(content, "base64", "utf-8")
+            att['Content-Type'] = 'application/octet-stream'
+            new_file_name = '=?utf-8?b?' + base64.b64encode(file_name.encode()).decode() + '?='
+            att["Content-Disposition"] = 'attachment; filename="%s"' % new_file_name
+            message.attach(att)
         message.attach(MIMEText(self.content))
         message['Subject'] = self.title
         message['From'] = self.username
@@ -47,8 +47,8 @@ class ConfigEmail:
         smtp.login(user=self.username, password=self.password)
         try:
             smtp.sendmail(self.username, self.receivers, message.as_string())
-        except Exception as e:
-            print('出错了。。', e)
+        except smtplib.SMTPException:
+            print('发送邮件出错！')
         else:
             print('发送成功！')
         smtp.quit()

@@ -6,9 +6,6 @@ project_path = get_project_path.get_path()
 
 
 class ReadExcel:
-    def __init__(self):
-        pass
-
     def get_xls(self, xls_name, sheet_name):
         cls = []
         xls_path = os.path.join(project_path, 'testFiles', 'case', xls_name)
